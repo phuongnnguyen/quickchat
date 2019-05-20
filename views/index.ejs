@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SocketIO App Chat</title>
+    <script src="jquery.js"></script>
+    <script src="https://quickchats.herokuapp.com/socket.io/socket.io.js"></script>
+    <script src="appchat.js"></script>
+    <link rel="stylesheet" href="appchat.css">
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="font/css/font-awesome.min.css">
+</head>
+<body class="w3-display-container">
+    <div id="loginForm" class="w3-display-middle w3-card-4">
+        <div class="w3-white w3-padding-large w3-padding-32">
+            <h1 class="w3-center">LOGIN</h1>
+            <p><input id="username" class="w3-input" type="text" placeholder="Your name..."/></p>
+            <button id="loginBtn" class="w3-button w3-red w3-round-xxlarge w3-section">LOGIN</button>
+            <div class="w3-center">
+                <p>Đăng nhập khác</p>
+                <p>
+                    <span id="fbAccount" class="w3-round-xxlarge w3-border w3-padding w3-btn"><i class="fa fa-facebook"></i></span>
+                    <span id="googleAccount" class="w3-round-xxlarge w3-border w3-padding w3-btn w3-margin"><i class="fa fa-google-plus"></i></span>
+                    <span id="twitterAccount" class="w3-round-xxlarge w3-border w3-padding  w3-btn"><i class="fa fa-twitter"></i></span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Room list -->
+    <div id="roomList" class="w3-display-topmiddle w3-white w3-padding-large w3-card-2 w3-padding-16 w3-margin-top">
+        <form action="#">
+            <p>
+                <input type="text" class="w3-input" id="roomName" placeholder="Room name..." required/>
+            </p>
+            <p>
+                <input type="text" class="w3-input" id="roomPassword" placeholder="Password" required/>
+            </p>
+            <button type="button" class="w3-button w3-border w3-border-green w3-padding" id="createRoom">Tạo Phòng</button>     
+        </form>
+    </div>
+    <!-- Chat room -->
+    <div id="userList" class="w3-sidebar w3-animate-left w3-card-2"></div>
+    <div class="w3-display-middle" id="chatRoom">
+        <button class="w3-btn w3-right" id="toggleList"><i class="fa fa-user"></i></button>
+        <button class="w3-btn" id="leaveRoom"><i class="fa fa-arrow-left"></i></button>
+        <div id="chatZone">
+            <b class="w3-large w3-center" id="roomChatName"></b >
+            <div id="messages"></div>
+            <div id="typing"></div>
+            <div id="inputField" class="w3-section">
+                <input type="text" id="userMsg" class="w3-input" style="background: transparent"/>
+                <button type="button" class="w3-btn" id="sendMsg"><i class="fa fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
